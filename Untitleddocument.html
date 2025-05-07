@@ -4,7 +4,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Origami Heart Surprise</title>
   <style>
-    /* Base Styles */
     body {
       margin: 0;
       padding: 0;
@@ -15,7 +14,8 @@
       align-items: center;
       flex-direction: column;
       height: 100vh;
-      overflow: hidden;
+      overflow-x: hidden;
+      position: relative;
     }
 
     h2 {
@@ -25,7 +25,7 @@
       margin-bottom: 20px;
     }
 
-    /* Origami-style Heart */
+    /* Heart Shape */
     .heart {
       width: 200px;
       height: 200px;
@@ -36,6 +36,7 @@
       margin-bottom: 20px;
       clip-path: polygon(50% 0%, 0% 35%, 0% 100%, 50% 65%, 100% 100%, 100% 35%);
       transition: transform 0.4s ease, opacity 0.3s ease;
+      z-index: 1;
     }
 
     .heart:before,
@@ -55,17 +56,14 @@
       top: 0;
     }
 
-    /* Hover Effect for Heart */
     .heart:hover {
       transform: rotate(45deg) scale(1.1);
     }
 
-    /* Hidden content */
     .hidden {
       display: none;
     }
 
-    /* Letter and Content */
     .letter {
       max-width: 800px;
       margin-top: 20px;
@@ -79,24 +77,22 @@
       color: #444;
       transition: opacity 0.5s ease;
       animation: fadeIn 1.5s ease-in-out;
+      z-index: 1;
     }
 
-    /* Bold Text */
     .bold {
       font-weight: bold;
-      color: #ff3b3f; /* To make the bold words stand out */
+      color: #ff3b3f;
     }
 
-    /* Italicized Text */
     .italic {
       font-style: italic;
       color: #6b6b6b;
     }
 
-    /* Fade-in Animation */
     @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .video-container {
@@ -111,7 +107,58 @@
       border: none;
     }
 
-    /* Responsive adjustments */
+    /* Floating Background Animation Layer */
+    .floating {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .float-item {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      opacity: 0.3;
+      animation: floatUp 10s linear infinite;
+    }
+
+    .float-heart {
+      background: url('https://upload.wikimedia.org/wikipedia/commons/5/57/Heart_coraz%C3%B3n.svg') no-repeat center;
+      background-size: contain;
+    }
+
+    .float-ball {
+      background: url('https://upload.wikimedia.org/wikipedia/commons/8/87/Pokeball.png') no-repeat center;
+      background-size: contain;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.3;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Randomize position and delay using nth-child */
+    .float-item:nth-child(odd) {
+      animation-duration: 12s;
+    }
+    .float-item:nth-child(even) {
+      animation-duration: 15s;
+    }
+
     @media (max-width: 768px) {
       .letter {
         font-size: 18px;
@@ -122,15 +169,30 @@
         height: 150px;
       }
     }
-
   </style>
-  <!-- Google Fonts link for Garamond -->
   <link href="https://fonts.googleapis.com/css2?family=Garamond&display=swap" rel="stylesheet">
 </head>
 <body>
 
+  <!-- Floating Background Layer -->
+  <div class="floating">
+    <!-- 10 random hearts and pokeballs -->
+    <div class="float-item float-heart" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="float-item float-ball" style="left: 20%; animation-delay: 3s;"></div>
+    <div class="float-item float-heart" style="left: 30%; animation-delay: 5s;"></div>
+    <div class="float-item float-ball" style="left: 40%; animation-delay: 2s;"></div>
+    <div class="float-item float-heart" style="left: 50%; animation-delay: 4s;"></div>
+    <div class="float-item float-ball" style="left: 60%; animation-delay: 1s;"></div>
+    <div class="float-item float-heart" style="left: 70%; animation-delay: 6s;"></div>
+    <div class="float-item float-ball" style="left: 80%; animation-delay: 2.5s;"></div>
+    <div class="float-item float-heart" style="left: 90%; animation-delay: 3.5s;"></div>
+    <div class="float-item float-ball" style="left: 15%; animation-delay: 5.5s;"></div>
+  </div>
+
+  <!-- Main Interactive Heart -->
   <div id="heart" class="heart" title="Click me!"></div>
 
+  <!-- Hidden Content Reveal -->
   <div id="content" class="hidden">
     <div class="video-container">
       <iframe 
@@ -153,7 +215,7 @@
         And now that we found each other, be assured that I will always be here.<br><br>
         For whatever comes in life, you're the person I'll always ask:<br><br>
 
-        <span class="italic">Wanna come along with me?</span> <br><br>
+        <span class="italic bold">Wanna come along with me?</span> <br><br>
         
         With all my heart,<br>
         Your Bine 💖
