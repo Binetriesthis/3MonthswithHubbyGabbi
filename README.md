@@ -92,7 +92,8 @@
     <div class="letter">
       <h2>Hi Hubs!</h2>
       <p>
-        Happy 3rd Monthsary! As the days go by, you make me realize how much I have always wished to have you.<br>
+        Happy 3rd Monthsary!<br>
+        As the days go by, you make me realize how much I have always wished to have you.
         How my heart longs to find its other half and discover a deeper meaning to this life.<br><br>
         You make me feel happy, excited, curious, worried at times, sad because I miss you, and yes, even a little angry because, why are you so 
         pogi and yet you're not here? But above all, you make me feel loved.<br><br>
