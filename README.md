@@ -90,13 +90,23 @@
     </div>
 
     <div class="letter">
-      <h2>Dear Gabbi,</h2>
+      <h2>Hi Hubs!</h2>
       <p>
-        Three months ago, everything changed for the better.<br>
-        You bring light, laughter, and so much love into my life. This little surprise is just a small reflection of how much you mean to me.<br><br>
-        I can't wait to make more memories with you.<br><br>
+        Happy 3rd Monthsary! As the days go by, you make me realize how much I have always wished to have you.<br>
+        How my heart longs to find its other half and discover a deeper meaning to this life.<br><br>
+        You make me feel happy, excited, curious, worried at times, sad because I miss you, and yes, even a little angry because, why are you so 
+        pogi and yet you're not here? But above all, you make me feel loved.<br><br>
+        My love, never forget that you are precious.<br><br>
+        You are, have always been, and will always be-- especially for me.<br><br>
+        Thank you for existing my love. Thank you for bringing me laughter and giggles, and all sorts of emotions. <br><br>
+        Thank you for trying. Thank you for not giving up on moments you and I havent crossed paths yet.<br><br>
+        And now that we found each other, be assured that I will always be here.<br><br>
+        For whatever comes in life, you're the person I'll always ask:<br><br>
+
+        Wanna come along with me? <br><br>
+        
         With all my heart,<br>
-        Your Hubby 💖
+        Your Bine 💖
       </p>
     </div>
   </div>
