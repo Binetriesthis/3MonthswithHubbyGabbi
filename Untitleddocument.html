@@ -4,19 +4,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Origami Heart Surprise</title>
   <style>
+    /* Base Styles */
     body {
       margin: 0;
       padding: 0;
       background: #fff0f0;
-      font-family: 'Garamond', serif; /* Changed font to Garamond */
+      font-family: 'Garamond', serif;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
       height: 100vh;
+      overflow: hidden;
     }
 
-    /* Origami-style heart */
+    h2 {
+      font-size: 36px;
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Origami-style Heart */
     .heart {
       width: 200px;
       height: 200px;
@@ -26,7 +35,7 @@
       cursor: pointer;
       margin-bottom: 20px;
       clip-path: polygon(50% 0%, 0% 35%, 0% 100%, 50% 65%, 100% 100%, 100% 35%);
-      transition: opacity 0.3s ease;
+      transition: transform 0.4s ease, opacity 0.3s ease;
     }
 
     .heart:before,
@@ -46,8 +55,48 @@
       top: 0;
     }
 
+    /* Hover Effect for Heart */
+    .heart:hover {
+      transform: rotate(45deg) scale(1.1);
+    }
+
+    /* Hidden content */
     .hidden {
       display: none;
+    }
+
+    /* Letter and Content */
+    .letter {
+      max-width: 800px;
+      margin-top: 20px;
+      padding: 25px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      text-align: left;
+      line-height: 1.8;
+      font-size: 20px;
+      color: #444;
+      transition: opacity 0.5s ease;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    /* Bold Text */
+    .bold {
+      font-weight: bold;
+      color: #ff3b3f; /* To make the bold words stand out */
+    }
+
+    /* Italicized Text */
+    .italic {
+      font-style: italic;
+      color: #6b6b6b;
+    }
+
+    /* Fade-in Animation */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
     }
 
     .video-container {
@@ -62,41 +111,20 @@
       border: none;
     }
 
-    .letter {
-      max-width: 800px; /* Increased max-width for better readability */
-      margin-top: 20px;
-      padding: 20px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      text-align: left;
-      line-height: 1.8; /* Improved line height for better readability */
-      font-size: 18px; /* Slightly larger font size */
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .letter {
+        font-size: 18px;
+        padding: 15px;
+      }
+      .heart {
+        width: 150px;
+        height: 150px;
+      }
     }
 
-    .letter h2 {
-      font-size: 24px;
-      font-weight: bold;
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    .letter p {
-      color: #444;
-      margin-bottom: 15px;
-    }
-
-    /* Bold Text */
-    .bold {
-      font-weight: bold;
-    }
-
-    /* Italicized Text */
-    .italic {
-      font-style: italic;
-    }
   </style>
-  <!-- Add Google Fonts link for Garamond -->
+  <!-- Google Fonts link for Garamond -->
   <link href="https://fonts.googleapis.com/css2?family=Garamond&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -139,6 +167,7 @@
 
     heart.addEventListener('click', () => {
       heart.style.opacity = 0;
+      heart.style.transform = 'rotate(45deg) scale(1)';
       setTimeout(() => {
         heart.style.display = 'none';
         content.classList.remove('hidden');
