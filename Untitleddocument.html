@@ -19,13 +19,12 @@
     }
 
     h2 {
-      font-size: 36px;
+      font-size: 20px;
       color: #333;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
-    /* Heart Shape */
     .heart {
       width: 200px;
       height: 200px;
@@ -72,8 +71,8 @@
       border-radius: 12px;
       box-shadow: 0 6px 12px rgba(0,0,0,0.1);
       text-align: left;
-      line-height: 1.8;
-      font-size: 20px;
+      line-height: 1.6;
+      font-size: 12px; /* ~9pt */
       color: #444;
       transition: opacity 0.5s ease;
       animation: fadeIn 1.5s ease-in-out;
@@ -82,7 +81,7 @@
 
     .bold {
       font-weight: bold;
-      color: #ff3b3f;
+      color: #000;
     }
 
     .italic {
@@ -107,7 +106,7 @@
       border: none;
     }
 
-    /* Floating Background Animation Layer */
+    /* Floating Background Layer */
     .floating {
       position: fixed;
       top: 0;
@@ -123,8 +122,8 @@
       position: absolute;
       width: 30px;
       height: 30px;
-      opacity: 0.3;
-      animation: floatUp 10s linear infinite;
+      opacity: 0.25;
+      animation: floatUp 12s linear infinite;
     }
 
     .float-heart {
@@ -133,7 +132,7 @@
     }
 
     .float-ball {
-      background: url('https://upload.wikimedia.org/wikipedia/commons/8/87/Pokeball.png') no-repeat center;
+      background: url('https://archives.bulbagarden.net/media/upload/thumb/8/84/Master_Ball_artwork.png/120px-Master_Ball_artwork.png') no-repeat center;
       background-size: contain;
     }
 
@@ -151,17 +150,17 @@
       }
     }
 
-    /* Randomize position and delay using nth-child */
     .float-item:nth-child(odd) {
-      animation-duration: 12s;
+      animation-duration: 14s;
     }
+
     .float-item:nth-child(even) {
-      animation-duration: 15s;
+      animation-duration: 17s;
     }
 
     @media (max-width: 768px) {
       .letter {
-        font-size: 18px;
+        font-size: 11px;
         padding: 15px;
       }
       .heart {
@@ -174,9 +173,9 @@
 </head>
 <body>
 
-  <!-- Floating Background Layer -->
+  <!-- Background Floating Elements -->
   <div class="floating">
-    <!-- 10 random hearts and pokeballs -->
+    <!-- Hearts and Pokéballs -->
     <div class="float-item float-heart" style="left: 10%; animation-delay: 0s;"></div>
     <div class="float-item float-ball" style="left: 20%; animation-delay: 3s;"></div>
     <div class="float-item float-heart" style="left: 30%; animation-delay: 5s;"></div>
@@ -189,10 +188,10 @@
     <div class="float-item float-ball" style="left: 15%; animation-delay: 5.5s;"></div>
   </div>
 
-  <!-- Main Interactive Heart -->
+  <!-- Heart Reveal -->
   <div id="heart" class="heart" title="Click me!"></div>
 
-  <!-- Hidden Content Reveal -->
+  <!-- Content -->
   <div id="content" class="hidden">
     <div class="video-container">
       <iframe 
